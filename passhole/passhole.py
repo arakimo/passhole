@@ -1052,7 +1052,12 @@ def edit(args):
         # add/set a field
         elif args.set:
             field = reserved_fields.get(args.set[0], args.set[0])
-            entry._set_string_field(field, args.set[1])
+            # normalize otp input
+            if field == 'otp':
+                value = parse_otp(args.set[1]).provisioning_uri()
+            else:
+                value = args.set[1]
+            entry._set_string_field(field, value)
 
         # remove a field
         elif args.remove:

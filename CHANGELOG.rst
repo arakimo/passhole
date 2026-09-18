@@ -1,3 +1,7 @@
+1.10.2 - 2026-98-18
+-------------------
+- normalize totp URI during `edit --set totp` or `add`
+
 1.10.1 - 2024-01-30
 -------------------
 - add `eval` command
